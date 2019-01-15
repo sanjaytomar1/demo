@@ -1,15 +1,56 @@
+[
 {
-  "posts": [
-    { "id": 1, "title": "Post 1" },
-    { "id": 2, "title": "Post 2" },
-    { "id": 3, "title": "Post 3" },
-    { "id": 3, "title": "Post 33333" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 },
-    { "id": 2, "body": "some comment", "postId": 1 }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
-}
+    "AirlinePartyCode": "BA",
+    "FlightNumber": "285",
+    "ScheduledOperationTime": "09:45Z",
+    "ScheduledOperationDate": "10/01/2019",
+    "PlannedTotalPassengerCount": "220",
+    "PlannedTransferPassengerCount": "165",
+    "TotalPassengerCount": "220",
+    "PassengerTransferManifestReceivedFlag": "Y",
+    "ScannedDirectPassengerCount": "",
+    "MaximumPassengerCount": "230",
+    "AircraftMovementDirection": "D",
+    "TransferAircraftMovement": [
+      {
+        "AirlinePartyCode": "BA",
+        "FlightNumber": "162",
+        "ScheduledOperationDate": "10/01/2019",
+        "ConnectionRiskTypeCode": "10",
+        "ConnectionRiskType": "Missed",
+        "TransferPassengerCount": "162",
+        "TransferBaggageCount": "320",
+        "MeanConnectionDuration": "-10"
+      },
+	   {
+        "AirlinePartyCode": "EK",
+        "FlightNumber": "001",
+        "ScheduledOperationDate": "10/01/2019",
+        "ConnectionRiskTypeCode": "44",
+        "ConnectionRiskType": "OK",
+        "TransferPassengerCount": "22",
+        "TransferBaggageCount": "20",
+        "MeanConnectionDuration": "-15"
+      },
+	   {
+        "AirlinePartyCode": "AI",
+        "FlightNumber": "131",
+        "ScheduledOperationDate": "10/01/2019",
+        "ConnectionRiskTypeCode": "20",
+        "ConnectionRiskType": "Very Tight",
+        "TransferPassengerCount": "40",
+        "TransferBaggageCount": "32",
+        "MeanConnectionDuration": "-12"
+      },
+	  {
+        "AirlinePartyCode": "VS",
+        "FlightNumber": "154",
+        "ScheduledOperationDate": "10/01/2019",
+        "ConnectionRiskTypeCode": "50",
+        "ConnectionRiskType": "Unknown",
+        "TransferPassengerCount": "4",
+        "TransferBaggageCount": "32",
+        "MeanConnectionDuration": "-12"
+      }
+    ] }
+]
