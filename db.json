@@ -27,7 +27,7 @@
         "AirlinePartyCode": "EK",
         "FlightNumber": "001",
         "ScheduledOperationDate": "10/01/2019",
-        "ConnectionRiskTypeCode": "44",
+        "ConnectionRiskTypeCode": "40",
         "ConnectionRiskType": "OK",
         "TransferPassengerCount": "22",
         "TransferBaggageCount": "20",
