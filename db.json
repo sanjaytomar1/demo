@@ -37,8 +37,8 @@
         "AirlinePartyCode": "AI",
         "FlightNumber": "131",
         "ScheduledOperationDate": "01/10/2019",
-        "ConnectionRiskTypeCode": "20",
-        "ConnectionRiskType": "Very Tight",
+        "ConnectionRiskTypeCode": "30",
+        "ConnectionRiskType": "Tight",
         "TransferPassengerCount": "40",
         "TransferBaggageCount": "32",
         "MeanConnectionDuration": "-12"
