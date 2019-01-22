@@ -47,8 +47,8 @@
         "AirlinePartyCode": "VS",
         "FlightNumber": "154",
         "ScheduledOperationDate": "10/01/2019",
-        "ConnectionRiskTypeCode": "50",
-        "ConnectionRiskType": "Unknown",
+        "ConnectionRiskTypeCode": "40",
+        "ConnectionRiskType": "OK",
         "TransferPassengerCount": "4",
         "TransferBaggageCount": "32",
         "MeanConnectionDuration": "-12"
