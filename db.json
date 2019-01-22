@@ -38,7 +38,7 @@
         "FlightNumber": "131",
         "ScheduledOperationDate": "01/10/2019",
         "ConnectionRiskTypeCode": "30",
-        "ConnectionRiskType": "Tight",
+        "ConnectionRiskType": "V Tight",
         "TransferPassengerCount": "40",
         "TransferBaggageCount": "32",
         "MeanConnectionDuration": "-12"
