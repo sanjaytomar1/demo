@@ -4,7 +4,7 @@
     "AirlinePartyCode": "BA",
     "FlightNumber": "285",
     "ScheduledOperationTime": "09:45Z",
-    "ScheduledOperationDate": "10/01/2019",
+    "ScheduledOperationDate": "01/10/2019",
     "PlannedTotalPassengerCount": "220",
     "PlannedTransferPassengerCount": "165",
     "TotalPassengerCount": "220",
@@ -16,7 +16,7 @@
       {
         "AirlinePartyCode": "BA",
         "FlightNumber": "162",
-        "ScheduledOperationDate": "10/01/2019",
+        "ScheduledOperationDate": "01/10/2019",
         "ConnectionRiskTypeCode": "10",
         "ConnectionRiskType": "Missed",
         "TransferPassengerCount": "162",
@@ -26,7 +26,7 @@
 	   {
         "AirlinePartyCode": "EK",
         "FlightNumber": "001",
-        "ScheduledOperationDate": "10/01/2019",
+        "ScheduledOperationDate": "01/10/2019",
         "ConnectionRiskTypeCode": "40",
         "ConnectionRiskType": "OK",
         "TransferPassengerCount": "22",
@@ -36,7 +36,7 @@
 	   {
         "AirlinePartyCode": "AI",
         "FlightNumber": "131",
-        "ScheduledOperationDate": "10/01/2019",
+        "ScheduledOperationDate": "01/10/2019",
         "ConnectionRiskTypeCode": "20",
         "ConnectionRiskType": "Very Tight",
         "TransferPassengerCount": "40",
@@ -46,7 +46,7 @@
 	  {
         "AirlinePartyCode": "VS",
         "FlightNumber": "154",
-        "ScheduledOperationDate": "10/01/2019",
+        "ScheduledOperationDate": "01/10/2019",
         "ConnectionRiskTypeCode": "50",
         "ConnectionRiskType": "Unknown",
         "TransferPassengerCount": "4",
