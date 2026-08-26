@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jersey Island Family Escape - Radisson Blu Waterfront Edition</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0f766e; /* Teal 700 */
+            --primary-light: #ccfbf1; /* Teal 50 */
+            --accent: #f59e0b; /* Amber 500 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .tab-content {
+            display: none;
+            animation: slideFadeIn 0.4s ease-out forwards;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes slideFadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 10px;
+        }
+        
+        @media print {
+            body { background: white; color: black; font-size: 12pt; }
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            .tab-content { display: block !important; page-break-inside: avoid; margin-bottom: 2rem; opacity: 1; transform: none; animation: none; }
+            .page-break { page-break-before: always; }
+            .shadow-lg, .shadow-xl { box-shadow: none !important; border: 1px solid #e2e8f0; }
+            header { min-height: auto !important; height: auto !important; padding: 2rem 0 !important; background: none !important; }
+            header img, header .bg-gradient-to-b { display: none; }
+            header h1 { color: #0f766e !important; text-shadow: none !important; }
+            header p { color: #475569 !important; text-shadow: none !important; }
+            .print-text-dark { color: #1e293b !important; }
+            .print-border { border-bottom: 2px solid #0f766e; padding-bottom: 0.5rem; }
+            .activity-card { page-break-inside: avoid; border: 1px solid #cbd5e1; margin-bottom: 1.5rem; }
+            a { text-decoration: none; color: inherit; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="relative h-[68vh] min-h-[480px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Beautiful Jersey Coastline" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900/95"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-12 w-full">
+            <span class="bg-teal-600/90 text-white px-5 py-1.5 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase mb-4 inline-block backdrop-blur-md shadow-lg border border-teal-400/30">Radisson Blu Waterfront Stay</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl text-white font-bold mb-3 drop-shadow-xl leading-tight">Jersey Island Escape</h1>
+            <p class="text-lg md:text-xl text-teal-50 mb-6 font-light drop-shadow-md max-w-3xl mx-auto">Tailored for your family at the Radisson Blu Waterfront Hotel, St. Helier (Ages 5-7)</p>
+            
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 inline-flex flex-wrap justify-center gap-6 mb-8 shadow-2xl">
+                <div class="text-white text-center px-4">
+                    <p class="text-xs uppercase tracking-wider text-teal-200">Base Hotel</p>
+                    <p class="font-semibold">Radisson Blu, St. Helier</p>
+                </div>
+                <div class="w-px h-10 bg-white/20 hidden md:block"></div>
+                <div class="text-white text-center px-4">
+                    <p class="text-xs uppercase tracking-wider text-teal-200">Duration</p>
+                    <p class="font-semibold">3 Nights / 4 Days</p>
+                </div>
+                <div class="w-px h-10 bg-white/20 hidden md:block"></div>
+                <div class="text-white text-center px-4">
+                    <p class="text-xs uppercase tracking-wider text-teal-200">Hotel Perks</p>
+                    <p class="font-semibold">Indoor Pool & Bay Views</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 no-print">
+                <button onclick="window.print()" class="bg-white text-teal-900 hover:bg-teal-50 px-8 py-3.5 rounded-full font-bold hover-lift flex items-center gap-2 shadow-xl border border-white">
+                    <i class="fas fa-file-pdf text-red-500 text-lg"></i> Print / Save PDF
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 -mt-12 relative z-20">
+       <script src='https://natwest05.pegalabs.io/prweb/PRRestService/c11nsvc/v1/pega-embed.js' ></script>
+<pega-embed id='theEmbed' action='createCase' caseTypeID='ODZ2UR-LeaveApp-Work-LeaveRequest' themeID='pzBootes' casePage='fullSelfService' assignmentHeader='false' appAlias='leave-approval' pegaServerUrl='https://natwest05.pegalabs.io/prweb/' autoReauth='true' authService='pega' clientId='26304830565120956708' style='width:100%'>
+</pega-embed>
+
+
+        <div class="bg-white rounded-3xl shadow-xl p-8 mb-12 border border-slate-100">
+            <div class="bg-gradient-to-r from-teal-800 to-slate-900 text-white rounded-2xl p-6 md:p-8 mb-10 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <span class="bg-teal-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Your Accommodation</span>
+                    <h3 class="text-2xl md:text-3xl font-bold mt-2 mb-2 font-serif">Radisson Blu Waterfront Hotel, Jersey</h3>
+                    <p class="text-teal-100 text-sm md:text-base max-w-2xl">
+                        Located right on Rue de L'étau in St. Helier, your hotel overlooks St. Aubin’s Bay and Elizabeth Castle. Enjoy spacious family rooms, an indoor swimming pool for evening splashes with the kids, and an ideal central launching pad for all island adventures.
+                    </p>
+                </div>
+                <div class="shrink-0 flex flex-col gap-3 w-full md:w-auto">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Radisson+Blu+Waterfront+Hotel+Jersey" target="_blank" class="bg-white text-teal-900 hover:bg-teal-50 px-6 py-3 rounded-xl font-bold text-sm text-center shadow-md transition flex items-center justify-center gap-2">
+                        <i class="fas fa-map-marker-alt text-teal-600"></i> View Hotel Map
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mb-8">
+                <h2 class="text-3xl text-slate-800 font-bold mb-3 print-text-dark print-border">Island Attractions & Proximity from Hotel</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Because the Radisson Blu is centrally positioned in St. Helier, no drive to any attraction on the island exceeds 20–25 minutes!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Must Visit -->
+                <div class="bg-teal-50/50 rounded-2xl p-6 border border-teal-100">
+                    <h3 class="text-xl font-bold text-teal-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-star text-amber-500"></i> Must-Visit Attractions
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-teal-600 mt-1"></i>
+                            <div><strong>Jersey Zoo:</strong> 32-acre sanctuary (15 mins from hotel). Great for gorillas & playgrounds.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-teal-600 mt-1"></i>
+                            <div><strong>Mont Orgueil Castle:</strong> Medieval fortress in Gorey (20 mins east). Secret rooms & dress-up.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-teal-600 mt-1"></i>
+                            <div><strong>Elizabeth Castle:</strong> Directly visible from your hotel! Reached via the amphibious Duck Boat.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-teal-600 mt-1"></i>
+                            <div><strong>aMaizin! Adventure Park:</strong> Go-karts, toboggans, and massive indoor play (15 mins west).</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-teal-600 mt-1"></i>
+                            <div><strong>St Brelade's Bay:</strong> Safest golden sands & paddling for kids (12 mins west).</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-teal-600 mt-1"></i>
+                            <div><strong>Corbière Lighthouse:</strong> Thrilling tidal causeway walk on the south-west tip.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Good to Visit -->
+                <div class="bg-blue-50/50 rounded-2xl p-6 border border-blue-100">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-thumbs-up text-blue-500"></i> Highly Recommended
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-plus-circle text-blue-500 mt-1"></i>
+                            <div><strong>Maritime Museum:</strong> Walking distance from hotel in St. Helier. Fully hands-on water play.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-plus-circle text-blue-500 mt-1"></i>
+                            <div><strong>Plémont Bay & Waterfall:</strong> Dramatic caves & beach waterfall on the north coast (Low tide only).</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-plus-circle text-blue-500 mt-1"></i>
+                            <div><strong>Val de la Mare:</strong> Peaceful inland nature stroll to spot red squirrels.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-plus-circle text-blue-500 mt-1"></i>
+                            <div><strong>St Ouen's Bay:</strong> Vast 5-mile beach on the west coast for sunset dining.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div class="sticky top-0 z-40 bg-slate-50/90 backdrop-blur-lg pt-4 pb-4 mb-8 no-print border-b border-slate-200">
+            <div class="flex overflow-x-auto gap-3 custom-scrollbar px-2">
+                <button onclick="switchTab('day1')" id="btn-day1" class="tab-btn active shrink-0 px-6 py-3 rounded-full font-bold bg-teal-700 text-white shadow-md transition-colors border border-teal-700">
+                    Day 1: Hotel Check-in & South Coast (Thu)
+                </button>
+                <button onclick="switchTab('day2')" id="btn-day2" class="tab-btn shrink-0 px-6 py-3 rounded-full font-bold bg-white text-slate-600 hover:bg-teal-50 border border-slate-200 shadow-sm transition-colors">
+                    Day 2: Castles & Wildlife (Fri)
+                </button>
+                <button onclick="switchTab('day3')" id="btn-day3" class="tab-btn shrink-0 px-6 py-3 rounded-full font-bold bg-white text-slate-600 hover:bg-teal-50 border border-slate-200 shadow-sm transition-colors">
+                    Day 3: Amphibious Adventure (Sat)
+                </button>
+                <button onclick="switchTab('day4')" id="btn-day4" class="tab-btn shrink-0 px-6 py-3 rounded-full font-bold bg-white text-slate-600 hover:bg-teal-50 border border-slate-200 shadow-sm transition-colors">
+                    Day 4: Nature & Hotel Checkout (Sun)
+                </button>
+            </div>
+        </div>
+
+        <div id="day1" class="tab-content active">
+            <div class="flex items-center gap-4 mb-8 print-border">
+                <div class="bg-teal-100 text-teal-700 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold shadow-inner">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl text-slate-800 print-text-dark">Day 1: Arrival & Radisson Blu Check-in</h2>
+                    <p class="text-slate-500 font-medium">Thursday 20th • Waterfront Hotel, St Brelade's & Sunsets</p>
+                </div>
+            </div>
+            
+            <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-teal-400 before:to-blue-400">
+                
+                <!-- Activity 1.1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto">
+                    <div class="absolute top-4 left-4 bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">12:30 PM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Radisson Blu Waterfront Hotel" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Radisson+Blu+Waterfront'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Check-in at Radisson Blu Waterfront</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Radisson+Blu+Waterfront+Hotel+Jersey" target="_blank" class="text-teal-600 bg-teal-50 hover:bg-teal-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm">Arrive in Jersey, head straight into St. Helier to check into the <strong>Radisson Blu Waterfront Hotel</strong>. Drop your bags, freshen up, and take in the magnificent views across St. Aubin’s Bay.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 1.2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto mt-8">
+                    <div class="absolute top-4 left-4 bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">2:00 PM - 4:00 PM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="St Brelade's Bay" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=St+Brelades+Bay'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">St Aubin & St Brelade's Bay</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=St+Brelade's+Bay+Jersey" target="_blank" class="text-teal-600 bg-teal-50 hover:bg-teal-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3">Drive just 12 minutes west from your hotel to St Brelade's Bay for an afternoon of safe paddling, golden sands, and building sandcastles.</p>
+                            <div class="space-y-2 mt-auto">
+                                <div class="bg-blue-50 text-blue-800 px-3 py-2 rounded-lg text-xs flex gap-2"><i class="fas fa-child mt-0.5"></i> <span><strong>For Kids:</strong> Safe paddling in calm waters and the nearby "Elephant Park" playground.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 1.3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto mt-8">
+                    <div class="absolute top-4 left-4 bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">5:30 PM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1506452305022-75797c276a6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Corbière Lighthouse" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Corbiere+Lighthouse'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Corbière Causeway & Ice Cream</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Corbiere+Lighthouse+Jersey" target="_blank" class="text-teal-600 bg-teal-50 hover:bg-teal-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3">Head further west to the dramatic south-west tip. Walk the exposed causeway at low tide to the striking white lighthouse, then grab famous Jersey Dairy ice cream.</p>
+                            <div class="space-y-2 mt-auto">
+                                <div class="bg-blue-50 text-blue-800 px-3 py-2 rounded-lg text-xs flex gap-2"><i class="fas fa-child mt-0.5"></i> <span><strong>For Kids:</strong> The thrill of the causeway and exploring rockpools.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 1.4 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto mt-8">
+                    <div class="absolute top-4 left-4 bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">7:30 PM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                             <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dinner at Sunset" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Sunset+Dining'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Return & Dinner at St Ouen's</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=El+Tico+St+Ouen+Jersey" target="_blank" class="text-teal-600 bg-teal-50 hover:bg-teal-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm">Enjoy sunset dining right on the beach at <em>El Tico Beach Cantina</em> before returning for a restful night at the Radisson Blu Waterfront Hotel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div id="day2" class="tab-content">
+            <div class="flex items-center gap-4 mb-8 print-border">
+                <div class="bg-emerald-100 text-emerald-700 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold shadow-inner">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl text-slate-800 print-text-dark">Day 2: Wildlife & Medieval Fortresses</h2>
+                    <p class="text-slate-500 font-medium">Friday 21st • Departing from Radisson Blu to Gorillas & Castles</p>
+                </div>
+            </div>
+            
+            <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-emerald-400 before:to-teal-400">
+                
+                <!-- Activity 2.1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto">
+                    <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">9:30 AM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1540201889814-7298319f6a27?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jersey Zoo" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Jersey+Zoo'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Jersey Zoo (Durrell Trust)</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Jersey+Zoo" target="_blank" class="text-emerald-600 bg-emerald-50 hover:bg-emerald-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3">Depart from your hotel for a quick 15-minute drive to this world-famed 32-acre wildlife sanctuary.</p>
+                            <div class="space-y-2 mt-auto">
+                                <div class="bg-blue-50 text-blue-800 px-3 py-2 rounded-lg text-xs flex gap-2"><i class="fas fa-child mt-0.5"></i> <span><strong>For Kids:</strong> Meerkats, gorillas, fruit bats & massive adventure playgrounds.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 2.2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto mt-8">
+                    <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">1:00 PM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1559863414-061033b006bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Harbour Lunch" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Gorey+Harbour'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Gorey Harbour Lunch</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Gorey+Pier+Jersey" target="_blank" class="text-emerald-600 bg-emerald-50 hover:bg-emerald-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm">Drive east to Gorey Harbour. Enjoy fresh seafood overlooking the boats at <em>The Crab Shack</em>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 2.3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto mt-8">
+                    <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">2:30 PM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mont Orgueil Castle" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Mont+Orgueil+Castle'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Mont Orgueil Castle</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Mont+Orgueil+Castle" target="_blank" class="text-emerald-600 bg-emerald-50 hover:bg-emerald-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3">Iconic 13th-century medieval fortress towering over Gorey Harbour with sweeping views across to France.</p>
+                            <div class="space-y-2 mt-auto">
+                                <div class="bg-blue-50 text-blue-800 px-3 py-2 rounded-lg text-xs flex gap-2"><i class="fas fa-child mt-0.5"></i> <span><strong>For Kids:</strong> Secret staircases, wooden soldiers & medieval dress-up rooms.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 2.4 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto mt-8">
+                    <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">5:00 PM & 7:30 PM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hotel Pool" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Hotel+Indoor+Pool'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Pool Time at Radisson Blu & Dinner</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Radisson+Blu+Waterfront+Hotel+Jersey" target="_blank" class="text-emerald-600 bg-emerald-50 hover:bg-emerald-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3">Head back to your hotel in St. Helier for an hour of splashing in the <strong>Radisson Blu indoor pool</strong> before dinner at the hotel restaurant or nearby waterfront bistros.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div id="day3" class="tab-content">
+            <div class="flex items-center gap-4 mb-8 print-border">
+                <div class="bg-blue-100 text-blue-700 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold shadow-inner">
+                    <i class="fas fa-anchor"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl text-slate-800 print-text-dark">Day 3: Island & Amphibious Adventure</h2>
+                    <p class="text-slate-500 font-medium">Saturday 22nd • Elizabeth Castle (Visible from Hotel) & Adventure Park</p>
+                </div>
+            </div>
+            
+            <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-blue-400 before:to-indigo-400">
+                
+                <!-- Activity 3.1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto">
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">9:30 AM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1563223772-91bf6eb1e345?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elizabeth Castle" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Elizabeth+Castle'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Elizabeth Castle & Duck Boat</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Elizabeth+Castle+Kiosk+Jersey" target="_blank" class="text-blue-600 bg-blue-50 hover:bg-blue-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3">Just minutes from your hotel! Board the yellow amphibious "Duck Boat" right from the waterfront slipway to access this 16th-century islet fortress.</p>
+                            <div class="space-y-2 mt-auto">
+                                <div class="bg-blue-50 text-blue-800 px-3 py-2 rounded-lg text-xs flex gap-2"><i class="fas fa-child mt-0.5"></i> <span><strong>For Kids:</strong> Riding the yellow amphibious vehicle right across the sea.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 3.2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto mt-8">
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">12:00 PM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1569263979104-865ab9cd8d5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maritime Museum" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Maritime+Museum'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Maritime Museum & Lunch</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Maritime+Museum+Jersey" target="_blank" class="text-blue-600 bg-blue-50 hover:bg-blue-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3">A short stroll along St. Helier's harbor to the fully hands-on maritime museum.</p>
+                            <div class="space-y-2 mt-auto">
+                                <div class="bg-blue-50 text-blue-800 px-3 py-2 rounded-lg text-xs flex gap-2"><i class="fas fa-child mt-0.5"></i> <span><strong>For Kids:</strong> Water play tanks, steering ship wheels & pirate lore.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 3.3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto mt-8">
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">2:30 PM</div>
+                    <div class="flex flex-col h-full w-full">
+                         <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Theme Park" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Adventure+Park'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">aMaizin! Adventure Park</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=aMaizin+Adventure+Park+Jersey" target="_blank" class="text-blue-600 bg-blue-50 hover:bg-blue-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3">Head west for a fun-filled afternoon of go-karts, toboggans, and animal petting.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 3.4 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto mt-8">
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">7:30 PM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="St Aubin Dinner" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Celebration+Dinner'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Celebration Dinner in St Aubin</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Salty+Dog+Bar+Bistro+Jersey" target="_blank" class="text-blue-600 bg-blue-50 hover:bg-blue-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm">Enjoy a high-end family meal at the <em>Salty Dog Bar & Bistro</em> in St Aubin before heading back to your hotel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div id="day4" class="tab-content">
+            <div class="flex items-center gap-4 mb-8 print-border">
+                <div class="bg-amber-100 text-amber-700 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold shadow-inner">
+                    <i class="fas fa-plane-departure"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl text-slate-800 print-text-dark">Day 4: Nature Walk & Hotel Checkout</h2>
+                    <p class="text-slate-500 font-medium">Sunday 23rd • Red Squirrels & Departure from Radisson Blu</p>
+                </div>
+            </div>
+            
+            <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-amber-400 before:to-red-400">
+                
+                <!-- Activity 4.1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-white rounded-2xl shadow-lg hover-lift overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto">
+                    <div class="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10">8:30 AM</div>
+                    <div class="flex flex-col h-full w-full">
+                        <div class="h-48 w-full relative">
+                            <img src="https://images.unsplash.com/photo-1542617937-299f1ff4d84c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nature Walk" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/0f766e/white?text=Nature+Stroll'">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-800">Val de la Mare Nature Stroll</h3>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Val+de+la+Mare+Jersey" target="_blank" class="text-amber-600 bg-amber-50 hover:bg-amber-100 w-10 h-10 flex items-center justify-center rounded-full transition no-print" title="View on Map">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3">Early morning peaceful walk around this tranquil inland lake surrounded by woodland trails. Prime habitat for spotting rare red squirrels.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 4.2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active activity-card bg-slate-800 text-white rounded-2xl shadow-lg overflow-hidden ml-12 md:ml-0 md:w-5/12 md:even:ml-auto mt-8 print-text-dark print-border border-slate-300">
+                    <div class="absolute top-4 left-4 bg-slate-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md z-10 print-text-dark">10:00 AM - 11:00 AM</div>
+                    <div class="flex flex-col h-full w-full p-8 text-center pt-16">
+                        <i class="fas fa-hotel text-4xl text-teal-400 mb-4 opacity-80"></i>
+                        <h3 class="text-2xl font-bold mb-2">Checkout & Airport Departure</h3>
+                        <p class="text-slate-300 print-text-dark text-sm">
+                            Check out of the <strong>Radisson Blu Waterfront Hotel</strong>. The drive to Jersey Airport is an easy 10-15 minutes. Board your flight back home with wonderful memories!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div class="mt-16 bg-slate-900 text-white rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden print-text-dark print-border">
+            <div class="absolute top-0 right-0 opacity-5 pointer-events-none no-print">
+                <i class="fas fa-compass text-[15rem] -mt-10 -mr-10"></i>
+            </div>
+            
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><i class="fas fa-clipboard-list text-teal-400"></i> Radisson Blu Stay & Island Tips</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                <!-- Transport -->
+                <div>
+                    <h3 class="text-xl font-bold text-teal-300 mb-4 border-b border-white/20 pb-2 print-text-dark">Hotel Logistics</h3>
+                    <ul class="space-y-4 text-slate-300 print-text-dark">
+                        <li class="flex gap-3">
+                            <i class="fas fa-swimming-pool mt-1 text-teal-400"></i>
+                            <p><strong>Indoor Pool:</strong> Perfect for unwinding with children after a day exploring castles and zoos.</p>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-car mt-1 text-teal-400"></i>
+                            <p><strong>Car Rental:</strong> The hotel provides convenient access to St. Helier ring roads and underground parking options.</p>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-map mt-1 text-teal-400"></i>
+                            <p><strong>Walking Distance:</strong> St. Helier’s shops, restaurants, and the Maritime Museum are all an easy 10-minute walk from the lobby.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Safety / Tides -->
+                <div>
+                    <h3 class="text-xl font-bold text-amber-300 mb-4 border-b border-white/20 pb-2 print-text-dark">Tidal Management & Safety</h3>
+                    <ul class="space-y-4 text-slate-300 print-text-dark">
+                        <li class="flex gap-3">
+                            <i class="fas fa-water mt-1 text-amber-400"></i>
+                            <p><strong>Vast Tides:</strong> Jersey has one of the largest tidal ranges in the world (up to 12 meters / 40 feet).</p>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-exclamation-triangle mt-1 text-amber-400"></i>
+                            <p><strong>Plémont & Corbière:</strong> Only visit Plémont beach and walk the Corbière causeway at low tide. Check daily tide tables!</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 text-center py-8 mt-12 no-print">
+        <p>Radisson Blu Waterfront Edition • Designed for beautiful family memories.</p>
+    </footer>
+
+    <script>
+        // Function to handle tab switching
+        function switchTab(dayId) {
+            // Hide all content tabs
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Reset all tab buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-teal-700', 'text-white', 'border-teal-700');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+            });
+
+            // Show selected content
+            document.getElementById(dayId).classList.add('active');
+
+            // Style selected button
+            const activeBtn = document.getElementById('btn-' + dayId);
+            activeBtn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+            activeBtn.classList.add('bg-teal-700', 'text-white', 'border-teal-700');
+            
+            // Smooth scroll to top of tabs if slightly scrolled down
+            const tabsContainer = document.querySelector('.sticky');
+            if (window.scrollY > tabsContainer.offsetTop - 50) {
+                window.scrollTo({
+                    top: tabsContainer.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        window.addEventListener("beforeprint", (event) => {
+           console.log("Preparing layout for print/PDF export..."); 
+        });
+    </script>
+</body>
+</html>
