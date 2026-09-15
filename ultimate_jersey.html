@@ -70,6 +70,21 @@
 </head>
 <body class="antialiased">
 
+    <!-- Include the Pega Constellation AI Agent SDK -->
+<script src="https://vdcqatq8.pegace.net/prweb/app/lgw/staticcontent/constellation/bootstrap-shell.min.js"></script>
+
+<div id="pega-agent-container"></div>
+
+<script>
+  PCore.getAgentAPI().launchAgent({
+    agentName: "LGWAgent",          // pyPurpose of the agent
+    appAlias: "lgw",                // Application alias
+    containerID: "pega-agent-container",
+    serverUrl: "https://vdcqatq8.pegace.net/prweb"
+  });
+</script>
+
+    
     <header class="relative h-[68vh] min-h-[480px] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Beautiful Jersey Coastline" class="w-full h-full object-cover" />
